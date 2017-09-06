@@ -1,0 +1,67 @@
+// 公用下拉选择样式
+
+.m-dropdown {
+    height: 32px;
+    width: 100%;
+    text-align: left;
+    .dropdown-hd {
+        @extend .m-input;
+        width: 100%;
+        margin-bottom: 5px;
+        cursor: pointer;
+        .hdtext {
+            font-size: 14px;
+            color: #333333;
+        }
+        .triicon {
+            color: #333333;
+            display: inline-block;
+            font-size: 12px;
+            position: relative;
+            top: 2px;
+            float: right;
+            &.scaleY {
+                $transform: scaleY(-1);
+            }
+        }
+    }
+
+    .dropdown-show{
+        background: #F5F5F5;
+        border: 1px solid #DDDDDD;
+        cursor: not-allowed;
+        .hdtext {
+            font-size: 14px;
+            color: $place-holder-color;
+        }
+        .triicon {
+            color: #999999;
+        }
+    }
+      
+    .dropdown-bd {
+        $dropdownshadow();
+        width: 156px;
+        z-index: 1;
+        position: relative;
+        &.show {
+            display: block;
+        }
+        .bd-item {
+            cursor: pointer;
+            line-height: 32px;
+            padding-left: 10px;
+            &:hover {
+                background-color: #F1F1F1;
+            }
+        }
+        .preimg {
+            margin-left: 10px;
+            margin-right: 15px;
+        }
+        .hdtext {
+            color: #333333;
+            font-size: 13px;
+        }
+    }
+}

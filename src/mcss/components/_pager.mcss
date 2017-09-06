@@ -1,0 +1,75 @@
+
+.m-pager {
+  // - Center pager by default
+  text-align: center;
+  // - Remove default list style
+  @extend .f-lsn;
+  @extend .f-lsi;
+
+  @extend .f-wsn;
+  > li {
+    display: inline-block;
+    text-align: center;
+
+    > a, > span {
+      display: inline-block;
+       $box-sizing: border-box;
+      text-decoration: none;
+
+      font-family:$font-base3;
+      font-size: 14px;
+      color: #666;
+      line-height: 30px - 2;
+      $size(30px,30px);
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      $transition:all ease .3s;
+    }
+
+    > a:hover, > a:focus {
+      border-color: $main-color;
+    }
+
+    > a:active {
+      color:#fff;
+      background: $main-color;
+    }
+  }
+
+  > li.z-crt > a {
+    color:#fff;
+    background: $main-color;
+
+  }
+
+  > li.z-dis > a {
+    cursor: not-allowed;
+    color: #ccc;
+    border-color: #ccc;
+  }
+
+  > li + li {
+  }
+
+}
+
+/* Disabled */
+.m-pager.z-dis {
+  > li {
+    > a {
+      cursor: not-allowed;
+    }
+  }
+}
+
+// Position Extend:
+// Description:     位置扩展
+// ========================================================================
+
+.m-pager-left {
+  text-align: left;
+}
+
+.m-pager-right {
+  text-align: right;
+}

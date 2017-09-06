@@ -1,0 +1,9 @@
+<div r-class={{"u-searchbox":true,"js-input":isOnInput}}>
+    <input class="m-input-search" placeholder="{searchText}"
+           on-focus={isOnInput=true}
+           on-input={this.$emit('input',$event)}
+           on-blur={isOnInput=false}
+           type="text"/>
+    <i class="u-icon-search-normal"></i>
+    <i class="u-icon-search-focus"></i>
+</div>

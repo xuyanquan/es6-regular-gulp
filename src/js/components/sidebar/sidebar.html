@@ -1,0 +1,15 @@
+<div class="m-sidebar">
+    {#list menus as menu}
+    <div class="m-sidebarb" {#if !!menu.url}mr-route={menu.url}{/if}
+       r-class={{'hot':this._isPathCurrent(menu.url)}}>
+        {#if menu.icon}
+        <div class="m-sidebar-icon">
+            <i class="{menu.icon}"></i>
+        </div>
+        {/if}
+        <div class="m-sidebar-title">{menu.title}</div>
+        {#if !!needIconTrangle}<i class="icon-triangle"></i>
+        {/if}
+    </div>
+    {/list}
+</div>

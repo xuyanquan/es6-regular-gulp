@@ -1,0 +1,18 @@
+
+// 复选框样式
+.m-check {
+    font-size: 13px;
+    color: #333333;
+    cursor: pointer;
+    $user-select: none;
+    &-box {
+        display: inline-block;
+        margin-right: 5px;
+        background: #ffffff;
+    }
+    &-icon {
+        font-size: 16px;
+    }
+}
+
+

@@ -1,0 +1,24 @@
+.u-searchbox {
+  position: relative;
+  .u-icon-search-normal, .u-icon-search-focus {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+  }
+
+  .u-icon-search-focus {
+    display: none;
+  }
+  .u-icon-search-normal {
+    display: inline-block;
+  }
+
+  &.js-input {
+    .u-icon-search-normal {
+      display: none;
+    }
+    .u-icon-search-focus {
+      display: inline-block;
+    }
+  }
+}

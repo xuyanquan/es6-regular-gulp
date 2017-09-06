@@ -1,0 +1,7 @@
+
+
+node_modules/
+WEB-INF/views/
+public/views
+src/mock/
+mock/

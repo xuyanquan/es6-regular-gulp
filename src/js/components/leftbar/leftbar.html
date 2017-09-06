@@ -1,0 +1,25 @@
+<div class="leftbar">
+    <div class="bartop">
+        {#if !!data.imageUrl}
+        <img src="{data.imageUrl}" alt="" class="bartop-img">
+        {#elseif !!data.icon}
+        <div class="bartop-icon">
+            <i class={data.icon}></i>
+        </div>
+        {/if}
+        <div class="bartop-title">{data.title}</div>
+    </div>
+
+    {#list data.list as x}
+    <div class="barblock">
+        {#if !!x.title}
+        <div class="bartitle">{x.title}{#if !!x.clickEvent}<i class="u-icon-menu-add" on-click={x.clickEvent()}></i>{/if}
+        </div>
+        {/if}
+
+        {#list x.list as y}
+        <a {#if !!y.url}r-link={y.url}{/if} r-class={{"barlink":true,'hot':this._isPathCurrent(y.url)}}>{y.title}</a>
+        {/list}
+    </div>
+    {/list}
+</div>

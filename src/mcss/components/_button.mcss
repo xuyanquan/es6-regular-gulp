@@ -1,0 +1,88 @@
+
+// 所有按钮样式文件
+
+// 通用样式
+@abstract btnstyle {
+    box-sizing: border-box;
+    padding: 5px 26px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 100;
+    display: inline-block;
+}
+
+// 设置按钮文字颜色与背景色
+$setBtnColor = ($bg, $color){
+    background: $bg;
+    color: $color;
+    &:hover {
+        color: $color;
+    }
+}
+
+// 固定大小按钮设置
+$setBtnSize = ($width, $height){
+    padding: 0;
+    line-height: $height;
+    width: $width;
+    text-align: center;
+}
+
+// 普通蓝底按钮
+.g-button {
+    @extend btnstyle;
+    $setBtnColor($main-color, #ffffff);
+    border: none;
+    &:disabled{
+      cursor: not-allowed;
+      background-color: rgba(94, 94, 238, 0.8);
+    }
+    .u-icon-add {
+      margin-right: 5px;
+      vertical-align: top;
+      font-size: 12px;
+    }
+}
+
+// 普通蓝底按钮 各种尺寸
+.g-button-sm {
+    @extend .g-button;
+    padding: 3px 10px;
+}
+
+.g-button-xl {
+    @extend .g-button;
+    padding: 8px 14px;;
+}
+
+// 资源文件配置按钮
+.g-button-config {
+    @extend .g-button;
+    $setBtnSize(200px, 50px);
+    font-size: 16px;
+}
+
+// 确认按钮固定大小尺寸
+.g-button-confirm {
+    @extend .g-button;
+    $setBtnSize(80px, 28px);
+}
+
+// 普通白底按钮
+.g-button-w {
+    @extend btnstyle;
+    $setBtnColor(#ffffff, #666666);
+    border: 1px solid #CCCCCC;
+}
+
+// 普通蓝底按钮 各种尺寸
+.g-button-w-sm {
+    @extend .g-button-w;
+    padding: 3px 10px;
+}
+
+// 取消按钮固定大小尺寸
+.g-button-cancel {
+    @extend .g-button-w;
+    $setBtnSize(80px, 28px);
+}

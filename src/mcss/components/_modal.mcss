@@ -1,0 +1,89 @@
+// 模态框组件
+.m-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    background: $modal-bg-color;
+    text-align: center;
+
+    &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+    }
+
+    .modal {
+        &_dialog {
+            width: 440px;
+            padding: 20px;
+            display: inline-block;
+            vertical-align: middle;
+            background: #fff;
+            box-shadow: 0 2px 5px 0 #AAAAAA;
+        }
+        &_title {
+            font-size: 16px;
+            color: $font-normal-color;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #E5E5E5;
+            text-align: center;
+            font-weight: 400;
+        }
+        &_bd {
+            padding-top: 30px;
+        }
+        &_ft {
+            display: none;
+        }
+    }
+    // 普通表单组件样式。
+    .item {
+        margin-bottom: 20px;
+        .item-label {
+            display: block;
+            font-size: 14px;
+            color: $font-light-color;
+            margin-bottom: 10px;
+            text-align: left;
+            .error {
+                color: $warn-color;
+                float: right;
+            }
+        }
+        .input-wrap {}
+        .m-input {}
+        .m-tagselect {}
+        .m-dropdown {}
+    }
+    .buttons {
+        padding-top: 50px;
+        text-align: right;
+        a { margin-left: 20px; }
+    }
+
+    // 确认弹窗
+    &-confirm{
+        .text{
+          font-size: 16px;
+          color: #333333;
+          line-height: 24px;
+          &.hl{
+            padding:8px 0;
+            background-color :#F3F3F3;
+          }
+        }
+        .buttons{
+          text-align: right;
+          button {
+            margin-left: 20px;
+          }
+        }
+        &-show .buttons{
+            text-align: center;
+        }
+    }
+}

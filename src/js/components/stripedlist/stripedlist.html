@@ -1,0 +1,95 @@
+<div r-class={{"m-stripedlist":true,"m-stripedlist-history":isHistoryMode}}>
+    <div class="search-wrap" r-class={{"hide": !search}}>
+        <searchbox on-input={this.search($event)}></searchbox>
+    </div>
+    {#if batDelete}
+    <div class="bataction-wrap">
+        <div class="list-row">
+            <div class="delete">
+                <a r-class={{"link-disabled":selectedNum==0&&!selectedAll}}
+                   on-click={this._dispatch($event,'click',{data:selectedIds,key:'batdelete'})}
+                   {#if selectedNum==0&&!selectedAll}disabled{/if}>
+                    <i class="u-icon-delete-check normal"></i><i class="u-icon-delete-disable disable"></i>{batDeleteText}
+                </a>
+            </div>
+        </div>
+    </div>
+    {/if}
+    <div class="list-wrap">
+        <div class="list-hd">
+            <div r-class={{"list-row":true,"list-hd":true,"no-list-item":!xlist.length,"js-selected":selectedAll}}
+                 ref="header">
+                {#if batDelete}
+                <div class="list-checkbox" on-click={this.toggleAll()}>
+                    <i class="u-icon-square-normal u-icon"></i><i class="u-icon-square-check u-icon"></i>
+                </div>
+                {/if}
+                {#list headers as header}
+                <div class="list-col col-key-{@(header.key)}" title={header.name}>
+                    <span class="col-name-s">{header.name}</span>
+                </div>
+                {/list}
+                {#if listActions && listActions.length>0}
+                <div class="list-actions">
+                    <span class="col-name-s">操作</span>
+                </div>
+                {/if}
+            </div>
+        </div>
+        <div class="list-bd">
+            {#if xlist.length > 0}
+            {#list xlist as item}
+            {#if !xlistStates[item.id].__hidden && xlistStates[item.id].__search_hit !== false &&
+            !xlistStates[item.id].__invisible}
+            <div class="list-row-wrap">
+                <div class={this.getRowClass(item)}
+                     data-id={item.id}
+                     on-click={this.toggleRow($event,xlistStates[item.id])}>
+                    {#if batDelete}
+                    <div class="list-checkbox" on-click={this.toggleRow($event,xlistStates[item.id],true)}><i
+                            class="u-icon-square-normal u-icon"></i><i class="u-icon-square-check u-icon"></i></div>
+                    {/if}
+                    {#list headers as header}
+                    {#if header.selected !== false}
+                    <div  {#if !!header.useClickEvent}class="col-key-{@(header.key)} list-col clickable"{#else}
+                          class="col-key-{@(header.key)} list-col"{/if}
+                         title={!!header.getTitle&&header.getTitle(header,item)||!!header.getValue&&header.getValue(header,item)||item[header.key]}
+                         {#if !!header.useClickEvent}
+                         on-click={this._dispatch($event,'click',{data:item,key:header.key})}{/if}>
+                        {#if !!xlistStates[item.id]['__ui_'+header.key+'_hit']}
+                        <span r-html={xlistStates[item.id]['__ui_'+header.key+'_hit']}></span>
+                        {#else}
+                        <span r-html={!!header.getValue&&header.getValue(header,item,xlistStates[item.id])||item[header.key]}></span>
+                        {/if}
+                    </div>
+                    {/if}
+                    {/list}
+
+                    {#if listActions && listActions.length>0}
+                    <div class="list-actions">
+                        {#list listActions as action}
+                        <a r-class={{"clickable":(!!action.useClickEvent)&&(action.highlight!=false)}}
+                           {#if !!action.useClickEvent}
+                           on-click={this._dispatch($event,'click',{data:item,key:action.key})}{/if}>
+                            {action.name}
+                        </a>
+                        {#if action_index < listActions.length-1}
+                        <span class="m-vsplit-text"></span>
+                        {/if}
+                        {/list}
+                    </div>
+                    {/if}
+                </div>
+
+            </div>
+            {/if}
+            {/list}
+            {#else}
+            <div class="no-item-tip">
+                <i class="u-icon-nodata"></i>
+                <p>{noItemTip}</p>
+            </div>
+            {/if}
+        </div>
+    </div>
+</div>

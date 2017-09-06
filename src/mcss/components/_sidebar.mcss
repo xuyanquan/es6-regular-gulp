@@ -1,0 +1,46 @@
+
+.m-sidebar {
+    background-color: #333333;
+    width: $sidebar-width;
+    height: 100%;
+    float: left;
+    &-icon {
+        font-size: 22px;
+        padding: 20px 0 5px 0;
+    }
+    &-title {}
+    &b {
+        display: block;
+        width: 100%;
+        height: 80px;
+        color: #999999;
+        font-size: 12px;
+        position :relative;
+        box-sizing: border-box;
+        text-align: center;
+        cursor: pointer;
+        $hot = {
+            color: #ffffff;
+            background-color: #000000;
+        }
+        &.hot {
+            $hot();
+            .icon-triangle{
+              height: 0;
+              width: 0;
+              border-right: 8px solid #fff;
+              border-top: 5px solid transparent;
+              border-bottom:5px solid transparent;
+              position: absolute;
+              right:0;
+              top:35px;
+            }
+        }
+        &:hover {
+            $hot();
+        }
+    }
+}
+
+
+

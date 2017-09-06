@@ -1,0 +1,19 @@
+<div class="m-dropdown">
+    <div r-class={{"dropdown-hd":true,"dropdown-show":!!showMode}} on-click={this.open($event)} ref="element">
+        <span class="hdtext">
+            {#if selectId}
+            {this.getSelectValue(selectId)}
+            {#else}
+            <span class="u-placeholder">{placeholder}</span>
+            {/if}
+        <i class="u-icon-arror-down triicon" r-class={{'scaleY': show}}></i>
+        </span>
+    </div>
+    <div class="dropdown-bd" r-hide={!show}>
+        {#list xlist as x}
+        <div class="bd-item" on-click={this.itemClick($event,x)}>
+            <span class="hdtext">{x.value}</span>
+        </div>
+        {/list}
+    </div>
+</div>

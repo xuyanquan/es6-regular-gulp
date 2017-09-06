@@ -1,0 +1,32 @@
+<div class="m-tagselect">
+    <div class="select-ipt m-input-text" on-click={this._toggleIpt($event)} ref="element">
+        <i class="u-icon-arror-down triicon" r-hide={!!isShowMode} r-class={{'scaleY': isOptionsOpen}}></i>
+        {#if tags.length>0}
+        {#list tags as tag}
+        <span class="ipt-tag">{tag.value}</span>
+        {/list}
+        {#else}
+        <span class="u-placeholder">{placeholder}</span>
+        {/if}
+    </div>
+
+    <ul r-hide={!isOptionsOpen||isShowMode} class="select-options">
+        {#if xlist.length>0}
+        {#list xlist as x}
+        <li r-class={{"item-disabled":xlistStates[x.id].__disabled,"item-selected":xlistStates[x.id].__selected}}
+            on-click={this._onSelect($event,x)}>
+            <span class="item-checkbox">
+                <i class="u-icon-checkbox-check"></i><i class="u-icon-checkbox-normal"></i><i class="u-icon-checkbox-disable"></i>
+            </span>
+            <span class="item-name">{x.value}</span>
+        </li>
+        {/list}
+        {#else}
+        <li class="item-disabled">
+            <span class="item-name"> 没有可选的项</span>
+        </li>
+        {/if}
+    </ul>
+
+
+</div>

@@ -1,0 +1,108 @@
+.m-tagselect {
+    text-align: left;
+    .select-ipt {
+        min-height: 32px;
+        line-height: 32px;
+        height :auto;
+        cursor:pointer;
+        padding:0 10px;
+        .ipt-tag {
+              display :inline-block;
+              height: 22px;
+              line-height :22px;
+              //margin: 1px 5px 1px 0;
+              padding: 0 12px;
+              border-radius: 2px;
+              background-color: $main-color;
+              color: #fff;
+              font-family: PingFangSC-Regular;
+              font-size: 12px;
+          }
+
+        .triicon {
+            color: #333333;
+            display: inline-block;
+            font-size: 12px;
+            position: relative;
+            top: 10px;
+            float: right;
+            &.scaleY {
+              $transform: scaleY(-1);
+            }
+        }
+    }
+    .select-options {
+        position: absolute;
+        z-index: 1;
+        width: 156px;
+        max-height: 300px;
+        overflow :auto;
+        background: #FFFFFF;
+        box-shadow: 0 2px 5px 0 #CCCCCC;
+        border-radius: 2px;
+        > li {
+            padding: 0 10px;
+            height: 32px;
+            line-height: 32px;
+            cursor: pointer;
+            $user-select: none;
+            width :136px;
+            overflow :hidden;
+            text-overflow :ellipsis;
+            white-space :nowrap;
+            &:nth-child(odd) {
+                background-color: #f3f3f3;
+            }
+            .item-checkbox {
+                font-size: 14px;
+                vertical-align: middle;
+            }
+            .u-icon-checkbox-normal, .u-icon-checkbox-check, .u-icon-checkbox-disable {
+                margin-right: 5px;
+                color: $main-color;
+            }
+            .u-icon-checkbox-disable{
+                color:#999;
+            }
+            .u-icon-checkbox-normal {
+                color: #cccccc;
+            }
+
+            .u-icon-checkbox-normal {
+                display: inline-block;
+            }
+            .u-icon-checkbox-check {
+                display: none;
+            }
+            .u-icon-checkbox-disable {
+                display: none;
+            }
+
+            &.item-selected {
+                .u-icon-checkbox-normal {
+                    display: none;
+                }
+                .u-icon-checkbox-check {
+                    display: inline-block;
+                }
+                .u-icon-checkbox-disable {
+                    display: none;
+                }
+            }
+
+            &.item-disabled {
+                cursor: not-allowed;
+                .u-icon-checkbox-normal {
+                    display: none;
+                }
+                .u-icon-checkbox-check {
+                    display: none;
+                }
+                .u-icon-checkbox-disable {
+                    display: inline-block;
+                }
+            }
+
+        }
+    }
+}

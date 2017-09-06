@@ -1,0 +1,158 @@
+.m-stripedlist {
+  background-color: #fff;
+  font-size: 12px;
+  .search-wrap {
+    text-align: right;
+    margin-bottom: 15px;
+  }
+  .list-row {
+    $display-flex();
+    flex-wrap: wrap;
+    height: 42px;
+    line-height: 42px;
+    transition: all ease .3s;
+    cursor: default;
+    position: relative;
+    padding-left: 12px;
+    border-bottom: solid 1px #e9ecf6;
+    .list-actions {
+      min-width: 100px;
+    }
+    .list-col {
+      flex: 1;
+      position: relative;
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 0 10px 0 0;
+      padding-left: 10px;
+      transition: all ease .3s;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .clickable {
+      color: $main-color;
+      cursor: pointer;
+    }
+    .u-icon-square-check {
+      display: none;
+    }
+    .m-vsplit-text {
+      height: 10px;
+      vertical-align: initial;
+    }
+    &.js-selected {
+      .u-icon-square-check {
+        display: inline-block;
+      }
+
+      .u-icon-square-normal {
+        display: none;
+      }
+
+      background-color: #f2f9fe;
+    }
+
+    &.js-disabled {
+      .list-checkbox {
+        visibility: hidden;
+      }
+    }
+
+    //一些可以预先设置的宽度
+    .col-key-logo {
+      flex: initial;
+      width: 60px;
+    }
+  }
+
+  .list-hd {
+    color: #111111;
+    background-color: #F4F4F4 !important;
+  }
+
+  .list-bd {
+    color: #555555;
+    max-height: 500px;
+    overflow: auto;
+    position: relative;
+  }
+
+  .bataction-wrap {
+    a {
+      color: #4a4a4a;
+      background-color: #fff;
+      display: inline;
+      i {
+        margin-right: 5px;
+      }
+      .normal {
+        display: inline-block;
+      }
+      .disable {
+        display: none;
+      }
+      &.link-disabled {
+        color: #acacac;
+        cursor: not-allowed;
+        .normal {
+          display: none;
+        }
+        .disable {
+          display: inline-block;
+        }
+      }
+    }
+  }
+  &-history {
+    font-size: 14px;
+
+    .list-hd {
+      color: #fff;
+      background-color: $main-color !important;
+    }
+
+    .list-bd {
+      color: #333;
+      .list-row-wrap:nth-of-type(even) {
+        background-color: #f3f3f3;
+      }
+    }
+  }
+  .list-checkbox {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    text-align: center;
+    margin-left: -12px;
+  }
+
+  //搜索命中样式
+  .hl {
+    background-color: #bedef5;
+    border-radius: 2px;
+  }
+  .no-item-tip {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    margin-left: -24px;
+    i {
+      font-size: 34px;
+    }
+    p {
+      margin-top: 5px;
+      color: #5c5cee;
+    }
+  }
+}
+
+.list-scrolled {
+  .list-hd {
+    box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.15);
+  }
+}

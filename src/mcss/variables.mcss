@@ -1,0 +1,24 @@
+$u-icon-add= "\e900";
+$u-icon-arauthority= "\e901";
+$u-icon-arror-down= "\e902";
+$u-icon-arversion= "\e903";
+$u-icon-authority= "\e904";
+$u-icon-checkbox-check= "\e905";
+$u-icon-checkbox-disable= "\e906";
+$u-icon-checkbox-normal= "\e907";
+$u-icon-edit= "\e908";
+$u-icon-event= "\e909";
+$u-icon-fail= "\e90a";
+$u-icon-import= "\e90b";
+$u-icon-menu-add= "\e90c";
+$u-icon-nodata= "\e90d";
+$u-icon-nopicture= "\e90e";
+$u-icon-organization= "\e90f";
+$u-icon-radiobox-check= "\e910";
+$u-icon-radiobox-normal= "\e911";
+$u-icon-search= "\e912";
+$u-icon-success= "\e913";
+$u-icon-upload= "\e914";
+$u-icon-user= "\e915";
+$u-icon-warn= "\e916";
+

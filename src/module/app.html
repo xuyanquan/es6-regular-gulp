@@ -1,0 +1,108 @@
+<div class="app">
+    <div class="app-demo-show">
+        <h1 class="app-title">Page Router</h1>
+    </div>
+    <div class="app-demo-show">
+        <div class="app-content">
+            <a class="g-button-sm" r-link={'/app'}>Go to Main</a>
+            <a class="g-button-sm" r-link={'/app/pagea'}>Go to PageA</a>
+            <a class="g-button-sm" r-link={'/app/pageb'}>Go to PageB</a>
+            <div class="app-body" r-view></div>
+        </div>
+    </div>
+    <div class="app-demo-show">
+        <h1 class="app-title">Component</h1>
+    </div>
+    <div class="app-demo-show">
+        <h1 class="app-title">Check</h1>
+        <div class="app-content">
+            <check checked={true} />
+        </div>
+    </div>
+    <div class="app-demo-show">
+        <h1 class="app-title">DropDown</h1>
+        <div class="app-content" style="width:200px;">
+            <dropdown xlist={xlist}></dropdown>
+        </div>
+    </div>
+    <div class="app-demo-show" style="width: 300px;">
+        <h1 class="app-title">Input</h1>
+        <div class="app-content">
+            <input type="text" class="m-input">
+        </div>
+        <div class="app-content">
+            <div class="m-input-text">I am div</div>
+        </div>
+        <div class="app-content">
+            <textarea class="m-textarea"></textarea>
+        </div>
+        <div class="app-content">
+            <input type="text" class="m-input error">
+        </div>
+    </div>
+    <div class="app-demo-show">
+        <h1 class="app-title">Button</h1>
+        <div class="app-content">
+            <a class="g-button-sm">按钮</a>
+            <a class="g-button">按钮</a>
+            <a class="g-button-xl">按钮</a>
+            <a class="g-button-config">按钮</a>
+            <a class="g-button-confirm">按钮</a>
+            <a class="g-button-w-sm">按钮</a>
+            <a class="g-button-w">按钮</a>
+            <a class="g-button-cancel">按钮</a>
+        </div>
+    </div>
+    <div class="app-demo-show">
+        <h1 class="app-title">Modal</h1>
+        <div class="app-content">
+            <div style="padding-bottom: 10px;">
+                <a class="g-button" on-click={this.showModal()}>Show Modal</a>
+            </div>
+        </div>
+        <div class="app-desc">此段为描述</div>
+    </div>
+    <div class="app-demo-show">
+        <h1 class="app-title">ModalConfirm</h1>
+        <div class="app-content">
+            <div style="padding-bottom: 10px;">
+                <a class="g-button" on-click={this.showModalConfirm()}>Confirm Modal</a>
+            </div>
+        </div>
+    </div>
+    <div class="app-demo-show">
+        <h1 class="app-title">Notify</h1>
+        <div class="app-content">
+            <a class="g-button-w" on-click={this.showNotify('s')}>success</a>
+            <a class="g-button-w" on-click={this.showNotify('e')}>error</a>
+            <a class="g-button-w" on-click={this.showNotify('w')}>warning</a>
+            <a class="g-button-w" on-click={this.showNotify('i')}>info</a>
+        </div>
+    </div>
+    <div class="app-demo-show">
+        <h1 class="app-title">StripedList</h1>
+        <div class="app-content">
+            <stripedlist xlist={list} headers={headers}></stripedlist>
+        </div>
+    </div>
+    <div class="app-demo-show">
+        <h1 class="app-title">TagSelect</h1>
+        <div class="app-content" style="width: 200px;">
+            <tagselect xlist={xlist}></tagselect>
+        </div>
+    </div>
+    <div class="app-demo-show">
+        <h1 class="app-title">Validator</h1>
+        <div class="app-content">
+            <pre>
+                {code}
+            </pre>
+        </div>
+    </div>
+    <div class="app-demo-show">
+        <h1 class="app-title">Ajax</h1>
+        <div class="app-content">
+            <a class="g-button-w" on-click={this.testAjax()}>Test</a>
+        </div>
+    </div>
+</div>

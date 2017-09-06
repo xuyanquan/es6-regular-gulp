@@ -1,0 +1,46 @@
+
+$reset-nec();
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: $font-base1;
+    box-sizing: border-box;
+    background-color: #f7f7f7;
+}
+
+clearfix, .clearfix {
+    zoom:1;
+    &:after{display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:".";}
+}
+
+.hide {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #333333;
+}
+
+
+$fadeIn();
+$fadeOut();
+
+.animated {
+    $animation-duration: 0.2s;
+}

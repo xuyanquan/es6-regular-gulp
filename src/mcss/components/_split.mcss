@@ -1,0 +1,17 @@
+// 分割线
+
+// 纵向分割线
+.m-vsplit {
+    // 文字分割线
+    &-text {
+        display: inline-block;
+        width: 1px;
+        height: 100%;
+        margin: 0 10px;
+        background-color: #999999;
+        vertical-align: middle;
+    }
+}
+
+// 横向分割线
+.m-hsplit {}

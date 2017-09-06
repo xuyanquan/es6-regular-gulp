@@ -1,0 +1,29 @@
+@import './mass/index.mcss';
+
+@abstract '_mixin.mcss';
+
+// font-family
+$font-base1 = "PingFang-SC-Regular",Helvetica,Tahoma,Arial,"Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+
+$display-flex = {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// components config
+$sidebar-width = 80px; // 侧栏宽度
+
+// color config
+$main-color = #5C5CEE; // 蓝色主题颜色
+$modal-bg-color = rgba(0, 0, 0, 0.2); // 模态框背景色
+$font-normal-color = #111111; // 字体颜色
+$font-light-color = #333333; // 字体颜色
+$font-lighter-color = #999999; // 字体颜色
+$warn-color = #FF7A7A; // 警告颜色
+$wait-color = #FFC045; // 警告颜色
+$success-color = #65C022; // 警告颜色
+$place-holder-color = #BBBBBB;
+$tab-hover-bg = #ECF6FF;

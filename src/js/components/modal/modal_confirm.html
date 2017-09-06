@@ -1,0 +1,7 @@
+<div class="m-modal-confirm {@(className)}">
+    <p r-class={{"text":true,"hl":hightLightText}}>{text}</p>
+    <div class="buttons">
+        <button class="g-button-cancel" on-click={this.onReject()} r-hide={!showCancelBtn}>取消</button>
+        <button class="g-button-confirm" on-click={this.onResolve()}>确认</button>
+    </div>
+</div>

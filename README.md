@@ -49,18 +49,14 @@ cnpm install
 cnpm install -g nei
 ```
 
-#### 3. 安装nei项目环境(key需要自己生成)
+#### 3. 安装nei项目环境(key需要自己生成)[在NEI网站自己项目中](https://nei.netease.com/)
 安装nei项目环境`前端webapp根目录下`
 ```shell
-nei build -k md5-key
+nei build -k 20252ab9ec26384420baea8e9300d8b1
 ```
 更新mock数据接口`前端webapp根目录下`
 ```shell
 nei update
-```
-单独启动nei服务器`前端webapp根目录下`
-```shell
-nei server
 ```
 
 #### 4. 本地运行环境
